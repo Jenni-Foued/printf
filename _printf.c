@@ -14,7 +14,7 @@ type_printer frm[] = {
 };
 va_list arg;
 int i = 0;
- if (!format || (format[i]) == '%' && format[i + 1] == '\0'))
+if (!format || (format[i]) == '%' && format[i + 1] == '\0'))
 return (-1);
 va_start(arg, format);
 while (format[i])
