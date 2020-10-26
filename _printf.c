@@ -24,5 +24,6 @@ frm[i].f(arg);
 break;
 i++;
 }
+va_end(arg);
 return (0);
 }
