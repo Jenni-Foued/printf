@@ -14,11 +14,9 @@ type_printer frm[] = {
 };
 va_list arg;
 int i = 0;
- if (!format)
+ if (!format || (format[i]) == '%' && format[i + 1] == '\0'))
 return (-1);
 va_start(arg, format);
-if (format[i]) == '%' && format[i + 1] == '\0')
-return (-1);
 while (format[i])
 {
 if (frm[i].c == format[i])
