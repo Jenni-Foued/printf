@@ -17,7 +17,7 @@ int i = 0;
 if (!format || (format[i]) == '%' && format[i + 1] == '\0'))
 return (-1);
 va_start(arg, format);
-while (format[i])
+while (format && format[i])
 {
 if (frm[i].c == format[i])
 frm[i].f(arg);
