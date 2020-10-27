@@ -4,21 +4,70 @@
 - output conversion.
 .SH SYNOPSIS
 #include "holberton.h"
+.RS 0
 int _printf(const char *format, ...)
+.RS 0
 int print_c
+.RS 0
 int print_s
+.RS 0
 int print_d
+.RS 0
 int print_i
+.RS 0
 .SH DESCRIPTION
 The family of function _printf() produce output accordin to a format, the function _printf() write output to stdout, the standard output stream, print_s() can handle the conversion s to write a string STR and print_c() can handle the conversion c write a character C.
+.RS 0
 The function printf_d() handle the conversion d to write a signed decimal integer, printf_i() can handle the conversion i to write an integer. They are all caled with va_list instead of a variable number of argument.
 .SH EXIT VALUE
 Once successful exit, these functions return the number of characters printed (excluding the null byte).
+.SH The conversion specifier
+Character that specifies the type of conversion:
+.RS 0
+.B %d, %i:
+.RS 0
+For integers we use either 'd' or 'i', so the int argument is converted to signed decimal notation.
+.RS 0
+.B %s:
+.RS 0
+For strings we use 's', so the const char *argument is expected to be a pointer to an array of character type (pointer to a string).
+.RS 0
+.B %c:
+.RS 0
+To print a character.
+.RS 0
+.B %R:
+.RS 0
+To print the rot13 of a string.
+.RS 0
+.B %p:
+.RS 0
+To print the pointer data type.
+.RS 0
+.B %u:
+.RS 0
+To print an unsigned integer.
+.RS 0
+.B %%:
+.RS 0
+To print %.
 .SH BUGS
-.SH EXAMPLES
+No known bugs.
+.SH EXAMPLE
+To print "Hello Holberton" use:
+.RS 0
+#include "holberton.h"
+.RS 0
+_printf("%s", "Hello Holberton");
+.RS 0
+To print "My age is, 21" use:
+.RS 0
+#include "holberton.h"
+.RS 0
+_printf("%s, %d", "My age is", 23);
 .SH AUTHOR
 Jenni Hadir and Med Foued.
 .SH COPYRIGHT
 C language.
 .SH SEE ALSO
-printf(3),printf(1) .
+.I printf(3), write(2) 
