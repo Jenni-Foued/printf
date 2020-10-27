@@ -44,12 +44,19 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == '%' || format[i + 1] == '\0')
+			if (format[i + 1] == '%')
 			{
 				_putchar(format[i]);
 				i++;
 				p_counter++;
 			}
+			else if (format[i + 1] == '\0')
+			{
+				_putchar(format[i]);
+				p_counter++;
+				return (p_counter);
+			}
+
 			else
 			{
 				f = printer(format[i + 1]);
@@ -58,11 +65,11 @@ int _printf(const char *format, ...)
 					p_counter = f(arg);
 					i++;
 				}
-			}
-			if (f == NULL)
-			{
+				else
+				{
 				_putchar(format[i]);
 				p_counter++;
+				}
 			}
 		}
 		else
