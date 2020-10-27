@@ -15,6 +15,7 @@ int (*printer(char formati))(va_list)
 	{'i', print_i},
 	{'d', print_i},
 	{'R', print_rot13},
+	{'b', print_b},
 	{'\0', NULL}
 	};
 	int i = 0;
@@ -22,9 +23,9 @@ int (*printer(char formati))(va_list)
 	for (i = 0; frm[i].c; i++)
 	{
 		if (formati == frm[i].c)
-			return (frm[i].f);
+			break;
 	}
-	return (NULL);
+	return (frm[i].f);
 }
 /**
  * _printf - a function that produces output according to a format
