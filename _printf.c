@@ -34,7 +34,7 @@ int (*printer(char formati))(va_list)
 int _printf(const char *format, ...)
 {
 	va_list arg;
-	int i = 0, print_counter = 0;
+	int i = 0, p_counter = 0;
 	int (*f)(va_list);
 
 	if (!format || (format[0] == '%' && format[1] == '\0'))
@@ -48,29 +48,29 @@ int _printf(const char *format, ...)
 			{
 				_putchar(format[i]);
 				i++;
-				print_counter++;
+				p_counter++;
 			}
 			else
 			{
 				f = printer(format[i + 1]);
 				if (f != NULL)
 				{
-					print_counter = f(arg);
+					p_counter = f(arg);
 					i++;
 				}
 			}
 			if (f == NULL)
 			{
 				_putchar(format[i]);
-				print_counter++;
+				p_counter++;
 			}
 		}
 		else
 		{
 			_putchar(format[i]);
-			print_counter++;
+			p_counter++;
 		}
 	}
 	va_end(arg);
-	return (print_counter);
+	return (p_counter);
 }

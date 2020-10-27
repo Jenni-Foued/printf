@@ -23,11 +23,12 @@ int print_i(va_list arg)
 	{
 		ar2 /= 10;
 	}
+	i--;
 	for (j = 1; i; i--)
-		j * 10;
+		j *= 10;
 	for (i = 0; ar; i++)
 	{
-		_putchar((ar / j) + '0');
+		_putchar(((ar / j) %10) + '0');
 		count++;
 		ar %= j;
 		j /= 10;
