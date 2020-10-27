@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <stdarg.h>
+#include <stdlib.h>
 /**
  * print_c - Print a character.
  * @arg: Char to be printed.

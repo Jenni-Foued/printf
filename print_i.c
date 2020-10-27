@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdarg.h>
 /**
  * print_i - prints integer function
  *@arg: integer to print
