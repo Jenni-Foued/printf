@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stdarg.h>
-#include <unistd.h>
 /**
  * print_c - Print a character.
  * @args: Char to be printed.
@@ -8,9 +7,9 @@
  * On error -1.
  **/
 
-int print_c(va_list args)
+int print_c(va_list arg)
 {
-	char c = va_arg(args, int);
+	char c = (char)va_arg(arg, int);
 
 	return (_putchar(c));
 }
