@@ -13,6 +13,6 @@ int (*f)(va_list);
 } type_printer;
 int _printf(const char *format, ...);
 int print_s(va_list arg);
-int print_c(va_list args);
+int print_c(va_list arg);
 int _putchar(char c);
 #endif
