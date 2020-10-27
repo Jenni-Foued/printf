@@ -12,17 +12,18 @@ int (*printer(char formati))(va_list)
 	type_printer frm[] = {
 	{'c', print_c},
 	{'s', print_s},
+	{'i', print_i},
+	{'d', print_i},
 	{'\0', NULL}
 	};
 	int i = 0;
 
-	while (frm[i].c == '\0')
+	for (i = 0; frm[i].c; i++)
 	{
 		if (formati == frm[i].c)
-			break;
-		i++;
+		  return(frm[i].f);
 	}
-	return (frm[i].f);
+	return (NULL);
 }
 /**
  * _printf - a function that produces output according to a format
@@ -35,39 +36,40 @@ int _printf(const char *format, ...)
 	int i = 0, print_counter = 0;
 	int (*f)(va_list);
 
-	if (format == NULL && format[i] == '\0')
-		return (-1);
-	va_start(arg, format);
-	while (format[i])
-	{
-		for (; format[i] != '%' && format[i]; i++)
-		{
-			_putchar(format[i]);
-			print_counter++;
-		}
-		if (format[i] == '\0')
-			return (print_counter);
-		if (format[i] == '%')
-		{
-			if (format[i + 1] == '%' || format[i + 1] == '\0')
-			{
-				_putchar(format[i]);
-				i++;
-			}
-			else
-			{
-				f = printer(format[i + 1]);
-				if (f != NULL)
-				{
-					print_counter = f(arg);
-					i += 2;
-				}
-				else
-				{
-					_putchar(format[i]);
-					print_counter++;
-					i++;
-				}}}}
-	va_end(arg);
-	return (print_counter);
+if (!format || (format[0] == '%' && format[1] == '\0'))
+return (-1);
+va_start(arg, format);
+for (; format && format[i]; i++)
+{
+if (format[i] == '%')
+{
+       if (format[i + 1] == '%' || format[i + 1] == '\0')
+       {
+         _putchar(format[i]);
+         i++;
+         print_counter++;
+       }
+       else
+       {
+         f = printer(format[i + 1]);
+         if (f != NULL)
+         {
+           print_counter = f(arg);
+           i ++;
+         }
+       }
+       if (f == NULL)
+       {
+         _putchar(format[i]);
+         print_counter++;
+       }
+}
+else
+{
+       _putchar(format[i]);
+       print_counter++;
+}
+}
+va_end(arg);
+return (print_counter);
 }
