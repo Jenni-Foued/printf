@@ -1,0 +1,24 @@
+.TH man 2 "27 October 2020" "_printf man page"
+.SH NAME
+.B _printf
+- output conversion.
+.SH SYNOPSIS
+#include "holberton.h"
+int _printf(const char *format, ...)
+int print_c
+int print_s
+int print_d
+int print_i
+.SH DESCRIPTION
+The family of function _printf() produce output accordin to a format, the function _printf() write output to stdout, the standard output stream, print_s() can handle the conversion s to write a string STR and print_c() can handle the conversion c write a character C.
+The function printf_d() handle the conversion d to write a signed decimal integer, printf_i() can handle the conversion i to write an integer. They are all caled with va_list instead of a variable number of argument.
+.SH EXIT VALUE
+Once successful exit, these functions return the number of characters printed (excluding the null byte).
+.SH BUGS
+.SH EXAMPLES
+.SH AUTHOR
+Jenni Hadir and Med Foued.
+.SH COPYRIGHT
+C language.
+.SH SEE ALSO
+printf(3),printf(1) .
