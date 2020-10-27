@@ -16,7 +16,7 @@ int print_s(va_list arg)
 
 	if (str == NULL)
 		str = "(nil)";
-	
+
 	for (; str[i]; i++)
 		_putchar(str[i]);
 	return (i);

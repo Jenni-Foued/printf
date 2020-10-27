@@ -2,7 +2,7 @@
 #include <stdarg.h>
 /**
  * print_c - Print a character.
- * @args: Char to be printed.
+ * @arg: Char to be printed.
  * Return: On success 1.
  * On error -1.
  **/
