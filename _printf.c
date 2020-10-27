@@ -22,7 +22,7 @@ int (*printer(char formati))(va_list)
 	for (i = 0; frm[i].c; i++)
 	{
 		if (formati == frm[i].c)
-		  return(frm[i].f);
+			return (frm[i].f);
 	}
 	return (NULL);
 }
@@ -37,40 +37,40 @@ int _printf(const char *format, ...)
 	int i = 0, print_counter = 0;
 	int (*f)(va_list);
 
-if (!format || (format[0] == '%' && format[1] == '\0'))
-return (-1);
-va_start(arg, format);
-for (; format && format[i]; i++)
-{
-if (format[i] == '%')
-{
-       if (format[i + 1] == '%' || format[i + 1] == '\0')
-       {
-         _putchar(format[i]);
-         i++;
-         print_counter++;
-       }
-       else
-       {
-         f = printer(format[i + 1]);
-         if (f != NULL)
-         {
-           print_counter = f(arg);
-           i ++;
-         }
-       }
-       if (f == NULL)
-       {
-         _putchar(format[i]);
-         print_counter++;
-       }
-}
-else
-{
-       _putchar(format[i]);
-       print_counter++;
-}
-}
-va_end(arg);
-return (print_counter);
+	if (!format || (format[0] == '%' && format[1] == '\0'))
+		return (-1);
+	va_start(arg, format);
+	for (; format && format[i]; i++)
+	{
+		if (format[i] == '%')
+		{
+			if (format[i + 1] == '%' || format[i + 1] == '\0')
+			{
+				_putchar(format[i]);
+				i++;
+				print_counter++;
+			}
+			else
+			{
+				f = printer(format[i + 1]);
+				if (f != NULL)
+				{
+					print_counter = f(arg);
+					i++;
+				}
+			}
+			if (f == NULL)
+			{
+				_putchar(format[i]);
+				print_counter++;
+			}
+		}
+		else
+		{
+			_putchar(format[i]);
+			print_counter++;
+		}
+	}
+	va_end(arg);
+	return (print_counter);
 }

@@ -7,7 +7,7 @@
 /**
  * print_s - Print a string.
  * @arg: String address.
- * Return: 0 success.
+ * Return: integer.
  */
 int print_s(va_list arg)
 {
