@@ -13,7 +13,7 @@ int print_b(va_list arg)
 	int count = 0, i = 0;
 	unsigned int tab[31];
 
-	if (b == 0)
+	if (!b)
 	{
 		_putchar('0');
 		count++;

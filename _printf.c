@@ -16,6 +16,7 @@ int (*printer(char formati))(va_list)
 	{'d', print_i},
 	{'R', print_rot13},
 	{'b', print_b},
+	{'r', print_r},
 	{'\0', NULL}
 	};
 	int i = 0;
