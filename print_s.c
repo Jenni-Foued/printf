@@ -12,7 +12,7 @@ int print_s(va_list arg)
 	int i = 0;
 
 	if (str == NULL)
-		str = "(nil)";
+		str = "(null)";
 
 	for (; str[i]; i++)
 		_putchar(str[i]);
