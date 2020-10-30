@@ -8,14 +8,17 @@
 int print_r(va_list arg)
 {
 	char *str = va_arg(arg, char *);
-	int i = 0;
+	int i = 0, counter = 0;
 
 	if (str == NULL)
-		str = "(nil)";
+		str = "(null)";
 	while (str[i])
 		i++;
 	i--;
-	for (; str[i]; i--)
+	for (; i >= 0; i--)
+	  {
 		_putchar(str[i]);
-	return (i);
+		counter++;
+	  }
+	return (counter);
 }
