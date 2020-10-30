@@ -64,7 +64,7 @@ int _printf(const char *format, ...)
 				f = printer(format[i + 1]);
 				if (f != NULL)
 				{
-					p_counter = f(arg);
+					p_counter += f(arg);
 					i++;
 				}
 				else
