@@ -2,8 +2,8 @@
 #include <stdlib.h>
 
 /**
- * print_c - Print a character.
- * @arg: Char to be printed.
+ * print_b - Print a number in binay.
+ * @arg: Number to be converted to binary and printed.
  * Return: Number of bits printed.
  **/
 
