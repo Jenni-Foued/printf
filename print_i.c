@@ -27,7 +27,7 @@ int print_i(va_list arg)
 		j *= 10;
 	for (i = 0; ar; i++)
 	{
-		_putchar(((ar / j) %10) + '0');
+		_putchar(((ar / j) % 10) + '0');
 		count++;
 		ar %= j;
 		j /= 10;
