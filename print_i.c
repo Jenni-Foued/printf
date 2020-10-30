@@ -7,17 +7,19 @@
 int print_i(va_list arg)
 {
 	int ar = va_arg(arg, int);
-	int count = 0, i = 0, ar2 = 0, j = 1;
+	unsigned int count = 0, i = 0, ar2 = 0, ar3, j = 1;
 
 	if (ar < 0)
 	{
 		_putchar('-');
 		count++;
-		ar *= -1;
+		ar3 = -ar;
 	}
-	if (ar > 9)
+	else
+		ar3 = ar;
+	if (ar3 > 9)
 	{
-	ar2 = ar;
+	ar2 = ar3;
 	for (; ar2; i++)
 	{
 		ar2 /= 10;
@@ -25,19 +27,18 @@ int print_i(va_list arg)
 	i--;
 	for (j = 1; i; i--)
 		j *= 10;
-	for (i = 0; ar; i++)
+	for (i = 0; ar3; i++)
 	{
-		_putchar(((ar / j) % 10) + '0');
+		_putchar(((ar3 / j) % 10) + '0');
 		count++;
-		ar %= j;
+		ar3 %= j;
 		j /= 10;
 	}
 	}
 	else
 	{
-		_putchar(ar + '0');
+		_putchar(ar3 + '0');
 		count++;
 	}
-
 	return (count);
 }
