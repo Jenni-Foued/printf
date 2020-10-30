@@ -19,4 +19,5 @@ int _putchar(char c);
 int print_rot13(va_list arg);
 int print_b(va_list arg);
 int print_r(va_list arg);
+int print_S(va_list arg);
 #endif
