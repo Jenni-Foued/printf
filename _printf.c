@@ -43,25 +43,35 @@ int _printf(const char *format, ...)
 		return (-1);
 	va_start(arg, format);
 	for (; format && format[i]; i++)
-	{if (format[i] == '%')
-		{if (format[i + 1] == '%')
-			{_putchar(format[i]);
-			        i++;
-				p_counter++; }
-			else if (format[i + 1] == '\0')
-			{_putchar(format[i]);
+	{
+		if (format[i] == '%')
+		{
+			if (format[i + 1] == '%')
+			{
+				_putchar(format[i]);
+			    i++;
 				p_counter++;
-				return (p_counter); }
+			}
+			else if (format[i + 1] == '\0')
+			{
+				_putchar(format[i]);
+				p_counter++;
+				return (p_counter);
+			}
 			else
-			{f = printer(format[i + 1]);
+			{
+				f = printer(format[i + 1]);
 				if (f != NULL)
-				{p_counter += f(arg);
-					i++; }
+				{
+					p_counter += f(arg);
+					i++;
+				}
 				else
-				{_putchar(format[i]);
-				p_counter++; }}}
+				{
+					_putchar(format[i]);
+					p_counter++;	}	}	}
 		else
-		{_putchar(format[i]);
-			p_counter++; }}
+		{	_putchar(format[i]);
+			p_counter++;	}	}
 	va_end(arg);
-	return (p_counter); }
+	return (p_counter);	}
