@@ -22,6 +22,7 @@ int (*printer(char formati))(va_list)
 	{'u', print_u},
 	{'x', print_x},
 	{'X', print_X},
+	{'o', print_o},
 	{'\0', NULL}
 	};
 	int i = 0;
