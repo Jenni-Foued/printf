@@ -33,6 +33,7 @@ int print_x(va_list arg)
 		tab[i] = nb % 16;
 		nb = nb / 16;
 	}
+	i--;
 	for (; i >= 0; i--)
 	{
 		for (j = 0; j < 17; j++)
@@ -83,6 +84,7 @@ int print_X(va_list arg)
 		tab[i] = nb % 16;
 		nb = nb / 16;
 	}
+	i--;
 	for (; i >= 0; i--)
 	{
 		for (j = 0; j < 17; j++)
