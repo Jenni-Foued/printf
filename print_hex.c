@@ -6,9 +6,9 @@
  */
 int print_x(va_list arg)
 {
-	int n = va_arg(arg, int);
-	unsigned int nb;
-	int tab[10];
+	long int n = va_arg(arg, long int);
+	long unsigned int nb;
+	int tab[20];
 	int i, j, count = 0;
 	char a[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8',
 	'9', 'a', 'b', 'c', 'd', 'e', 'f'};
@@ -57,9 +57,9 @@ int print_x(va_list arg)
 
 int print_X(va_list arg)
 {
-	int n = va_arg(arg, int);
-	unsigned int nb;
-	int tab[10];
+	long int n = va_arg(arg, long int);
+	long unsigned int nb;
+	int tab[20];
 	int i, j, count = 0;
 	char a[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8',
 	'9', 'A', 'B', 'C', 'D', 'E', 'F'};
