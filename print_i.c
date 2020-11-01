@@ -19,7 +19,8 @@ int print_i(va_list arg)
 	}
 	else
 		unb = nb;
-	
+	if (unb > 0)
+	{
 	while (unb != 0)
 	{
 		tab[i] = (unb % 10) + '0';
@@ -33,5 +34,12 @@ int print_i(va_list arg)
 		i--;
 		count++;
 	}
+	}
+	else
+	{
+		_putchar('0');
+		count++;
+	}
+
 	return (count);
 }
