@@ -21,19 +21,19 @@ int print_i(va_list arg)
 		unb = nb;
 	if (unb > 0)
 	{
-	while (unb != 0)
-	{
-		tab[i] = (unb % 10) + '0';
-		unb /= 10;
-		i++;
-	}
-	i--;
-	while (i >= 0)
-	{
-		_putchar(tab[i]);
+		while (unb != 0)
+		{
+			tab[i] = (unb % 10) + '0';
+			unb /= 10;
+			i++;
+		}
 		i--;
-		count++;
-	}
+		while (i >= 0)
+		{
+			_putchar(tab[i]);
+			i--;
+			count++;
+		}
 	}
 	else
 	{
