@@ -1,43 +1,36 @@
 #include "holberton.h"
 /**
  * print_i - prints integer function
- *@arg: integer to print
+ * @arg: integer to print
  * Return: number of integer printed
  */
 int print_i(va_list arg)
 {
-	int ar = va_arg(arg, int);
-	unsigned int count = 0, i = 0, ar2 = 0, ar3, j = 1;
+	int nb = va_arg(arg, int);
+	unsigned int count = 0, unb;
+	int i = 0;
+	char tab[10];
 
-	if (ar < 0)
+	if (nb < 0)
 	{
 		_putchar('-');
 		count++;
-		ar3 = -ar;
+		unb = -nb;
 	}
 	else
-		ar3 = ar;
-	if (ar3 > 9)
+		unb = nb;
+	
+	while (unb != 0)
 	{
-	ar2 = ar3;
-	for (; ar2; i++)
-	{
-		ar2 /= 10;
+		tab[i] = (unb % 10) + '0';
+		unb /= 10;
+		i++;
 	}
 	i--;
-	for (j = 1; i; i--)
-		j *= 10;
-	for (i = 0; ar3; i++)
+	while (i >= 0)
 	{
-		_putchar(((ar3 / j) % 10) + '0');
-		count++;
-		ar3 %= j;
-		j /= 10;
-	}
-	}
-	else
-	{
-		_putchar(ar3 + '0');
+		_putchar(tab[i]);
+		i--;
 		count++;
 	}
 	return (count);
